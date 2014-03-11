@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		20A121FA18CF8E3000BBEA7E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A121F918CF8E3000BBEA7E /* main.cpp */; };
 		20A121FC18CF8E3000BBEA7E /* CSE335_Proj03.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20A121FB18CF8E3000BBEA7E /* CSE335_Proj03.1 */; };
+		20A1220718CF95C200BBEA7E /* Literal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1220518CF95C200BBEA7E /* Literal.cpp */; };
+		20A1220A18CF96BC00BBEA7E /* LogicExpr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1220818CF96BC00BBEA7E /* LogicExpr.cpp */; };
+		20A1220D18CF9AC100BBEA7E /* Variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1220B18CF9AC100BBEA7E /* Variable.cpp */; };
+		20A1221318CF9E4F00BBEA7E /* Negate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221118CF9E4F00BBEA7E /* Negate.cpp */; };
+		20A1221618CFA19900BBEA7E /* BoolExpr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221418CFA19900BBEA7E /* BoolExpr.cpp */; };
+		20A1221918CFD13400BBEA7E /* And.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221718CFD13400BBEA7E /* And.cpp */; };
+		20A1221C18CFD32000BBEA7E /* Or.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221A18CFD32000BBEA7E /* Or.cpp */; };
+		20A1221F18CFD37100BBEA7E /* Implication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221D18CFD37100BBEA7E /* Implication.cpp */; };
+		20A1222218CFD45F00BBEA7E /* Equivalence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222018CFD45F00BBEA7E /* Equivalence.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +37,24 @@
 		20A121F618CF8E3000BBEA7E /* CSE335_Proj03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE335_Proj03; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A121F918CF8E3000BBEA7E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		20A121FB18CF8E3000BBEA7E /* CSE335_Proj03.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CSE335_Proj03.1; sourceTree = "<group>"; };
+		20A1220518CF95C200BBEA7E /* Literal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Literal.cpp; sourceTree = "<group>"; };
+		20A1220618CF95C200BBEA7E /* Literal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Literal.h; sourceTree = "<group>"; };
+		20A1220818CF96BC00BBEA7E /* LogicExpr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogicExpr.cpp; sourceTree = "<group>"; };
+		20A1220918CF96BC00BBEA7E /* LogicExpr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicExpr.h; sourceTree = "<group>"; };
+		20A1220B18CF9AC100BBEA7E /* Variable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Variable.cpp; sourceTree = "<group>"; };
+		20A1220C18CF9AC100BBEA7E /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
+		20A1221118CF9E4F00BBEA7E /* Negate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Negate.cpp; sourceTree = "<group>"; };
+		20A1221218CF9E4F00BBEA7E /* Negate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Negate.h; sourceTree = "<group>"; };
+		20A1221418CFA19900BBEA7E /* BoolExpr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoolExpr.cpp; sourceTree = "<group>"; };
+		20A1221518CFA19900BBEA7E /* BoolExpr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoolExpr.h; sourceTree = "<group>"; };
+		20A1221718CFD13400BBEA7E /* And.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = And.cpp; sourceTree = "<group>"; };
+		20A1221818CFD13400BBEA7E /* And.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = And.h; sourceTree = "<group>"; };
+		20A1221A18CFD32000BBEA7E /* Or.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Or.cpp; sourceTree = "<group>"; };
+		20A1221B18CFD32000BBEA7E /* Or.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Or.h; sourceTree = "<group>"; };
+		20A1221D18CFD37100BBEA7E /* Implication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Implication.cpp; sourceTree = "<group>"; };
+		20A1221E18CFD37100BBEA7E /* Implication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Implication.h; sourceTree = "<group>"; };
+		20A1222018CFD45F00BBEA7E /* Equivalence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Equivalence.cpp; sourceTree = "<group>"; };
+		20A1222118CFD45F00BBEA7E /* Equivalence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equivalence.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +89,24 @@
 			children = (
 				20A121F918CF8E3000BBEA7E /* main.cpp */,
 				20A121FB18CF8E3000BBEA7E /* CSE335_Proj03.1 */,
+				20A1220518CF95C200BBEA7E /* Literal.cpp */,
+				20A1220618CF95C200BBEA7E /* Literal.h */,
+				20A1220818CF96BC00BBEA7E /* LogicExpr.cpp */,
+				20A1220918CF96BC00BBEA7E /* LogicExpr.h */,
+				20A1220B18CF9AC100BBEA7E /* Variable.cpp */,
+				20A1220C18CF9AC100BBEA7E /* Variable.h */,
+				20A1221118CF9E4F00BBEA7E /* Negate.cpp */,
+				20A1221218CF9E4F00BBEA7E /* Negate.h */,
+				20A1221418CFA19900BBEA7E /* BoolExpr.cpp */,
+				20A1221518CFA19900BBEA7E /* BoolExpr.h */,
+				20A1221718CFD13400BBEA7E /* And.cpp */,
+				20A1221818CFD13400BBEA7E /* And.h */,
+				20A1221A18CFD32000BBEA7E /* Or.cpp */,
+				20A1221B18CFD32000BBEA7E /* Or.h */,
+				20A1221D18CFD37100BBEA7E /* Implication.cpp */,
+				20A1221E18CFD37100BBEA7E /* Implication.h */,
+				20A1222018CFD45F00BBEA7E /* Equivalence.cpp */,
+				20A1222118CFD45F00BBEA7E /* Equivalence.h */,
 			);
 			path = CSE335_Proj03;
 			sourceTree = "<group>";
@@ -117,7 +162,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A1221C18CFD32000BBEA7E /* Or.cpp in Sources */,
+				20A1221918CFD13400BBEA7E /* And.cpp in Sources */,
+				20A1222218CFD45F00BBEA7E /* Equivalence.cpp in Sources */,
+				20A1220A18CF96BC00BBEA7E /* LogicExpr.cpp in Sources */,
+				20A1220718CF95C200BBEA7E /* Literal.cpp in Sources */,
+				20A1221F18CFD37100BBEA7E /* Implication.cpp in Sources */,
+				20A1221618CFA19900BBEA7E /* BoolExpr.cpp in Sources */,
 				20A121FA18CF8E3000BBEA7E /* main.cpp in Sources */,
+				20A1220D18CF9AC100BBEA7E /* Variable.cpp in Sources */,
+				20A1221318CF9E4F00BBEA7E /* Negate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
