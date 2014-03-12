@@ -7,12 +7,26 @@
 //
 
 #include <iostream>
+#include "LogicExprVisitor.h"
+#include "PrintVisitor.h"
+#include "SimplifyVisitor.h"
+#include "Literal.h"
+#include "Negate.h"
+#include "Variable.h"
+#include "BoolExpr.h"
+#include "And.h"
+#include "Or.h"
+#include "Implication.h"
+#include "Equivalence.h"
 
 int main(int argc, const char * argv[])
 {
+    LogicExpr* ex = new Or(new And(new Negate(new Implication(new Literal(true), new Literal(false))), new Equivalence(new Literal(true), new Literal(false))), new Literal(false));
+    
+    PrintVisitor* pv;
+    ex->accept(pv);
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    delete ex;
+    delete pv;
 }
 
