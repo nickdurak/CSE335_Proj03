@@ -53,7 +53,7 @@ void LogicExprVisitor::visitOr(Or* o)
 {
     cout << "(";
     o->getLeftExpr()->accept(this);
-    cout << "&";
+    cout << "|";
     o->getRightExpr()->accept(this);
     cout << "(";
 }
