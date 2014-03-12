@@ -11,5 +11,5 @@
 
 void And::accept(LogicExprVisitor *v)
 {
-    
+    v->visitAnd(this);
 }

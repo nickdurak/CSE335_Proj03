@@ -17,5 +17,5 @@ LogicExpr* Negate::getExpr()
 
 void Negate::accept(LogicExprVisitor* v)
 {
-    
+    v->visitNegate(this);
 }

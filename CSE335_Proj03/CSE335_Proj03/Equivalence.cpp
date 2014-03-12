@@ -7,3 +7,9 @@
 //
 
 #include "Equivalence.h"
+#include "LogicExprVisitor.h"
+
+void Equivalence::accept(LogicExprVisitor *v)
+{
+    v->visitEquivalence(this);
+}

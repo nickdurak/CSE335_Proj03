@@ -18,6 +18,9 @@
 		20A1221C18CFD32000BBEA7E /* Or.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221A18CFD32000BBEA7E /* Or.cpp */; };
 		20A1221F18CFD37100BBEA7E /* Implication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1221D18CFD37100BBEA7E /* Implication.cpp */; };
 		20A1222218CFD45F00BBEA7E /* Equivalence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222018CFD45F00BBEA7E /* Equivalence.cpp */; };
+		20A1222918D0E29600BBEA7E /* LogicExprVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222318D0E29600BBEA7E /* LogicExprVisitor.cpp */; };
+		20A1222A18D0E29600BBEA7E /* PrintVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222518D0E29600BBEA7E /* PrintVisitor.cpp */; };
+		20A1222B18D0E29600BBEA7E /* SimplifyVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222718D0E29600BBEA7E /* SimplifyVisitor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +58,12 @@
 		20A1221E18CFD37100BBEA7E /* Implication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Implication.h; sourceTree = "<group>"; };
 		20A1222018CFD45F00BBEA7E /* Equivalence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Equivalence.cpp; sourceTree = "<group>"; };
 		20A1222118CFD45F00BBEA7E /* Equivalence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equivalence.h; sourceTree = "<group>"; };
+		20A1222318D0E29600BBEA7E /* LogicExprVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogicExprVisitor.cpp; sourceTree = "<group>"; };
+		20A1222418D0E29600BBEA7E /* LogicExprVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicExprVisitor.h; sourceTree = "<group>"; };
+		20A1222518D0E29600BBEA7E /* PrintVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrintVisitor.cpp; sourceTree = "<group>"; };
+		20A1222618D0E29600BBEA7E /* PrintVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintVisitor.h; sourceTree = "<group>"; };
+		20A1222718D0E29600BBEA7E /* SimplifyVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimplifyVisitor.cpp; sourceTree = "<group>"; };
+		20A1222818D0E29600BBEA7E /* SimplifyVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplifyVisitor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +102,12 @@
 				20A1220618CF95C200BBEA7E /* Literal.h */,
 				20A1220818CF96BC00BBEA7E /* LogicExpr.cpp */,
 				20A1220918CF96BC00BBEA7E /* LogicExpr.h */,
+				20A1222318D0E29600BBEA7E /* LogicExprVisitor.cpp */,
+				20A1222418D0E29600BBEA7E /* LogicExprVisitor.h */,
+				20A1222518D0E29600BBEA7E /* PrintVisitor.cpp */,
+				20A1222618D0E29600BBEA7E /* PrintVisitor.h */,
+				20A1222718D0E29600BBEA7E /* SimplifyVisitor.cpp */,
+				20A1222818D0E29600BBEA7E /* SimplifyVisitor.h */,
 				20A1220B18CF9AC100BBEA7E /* Variable.cpp */,
 				20A1220C18CF9AC100BBEA7E /* Variable.h */,
 				20A1221118CF9E4F00BBEA7E /* Negate.cpp */,
@@ -164,14 +179,17 @@
 			files = (
 				20A1221C18CFD32000BBEA7E /* Or.cpp in Sources */,
 				20A1221918CFD13400BBEA7E /* And.cpp in Sources */,
+				20A1222A18D0E29600BBEA7E /* PrintVisitor.cpp in Sources */,
 				20A1222218CFD45F00BBEA7E /* Equivalence.cpp in Sources */,
 				20A1220A18CF96BC00BBEA7E /* LogicExpr.cpp in Sources */,
 				20A1220718CF95C200BBEA7E /* Literal.cpp in Sources */,
 				20A1221F18CFD37100BBEA7E /* Implication.cpp in Sources */,
 				20A1221618CFA19900BBEA7E /* BoolExpr.cpp in Sources */,
 				20A121FA18CF8E3000BBEA7E /* main.cpp in Sources */,
+				20A1222B18D0E29600BBEA7E /* SimplifyVisitor.cpp in Sources */,
 				20A1220D18CF9AC100BBEA7E /* Variable.cpp in Sources */,
 				20A1221318CF9E4F00BBEA7E /* Negate.cpp in Sources */,
+				20A1222918D0E29600BBEA7E /* LogicExprVisitor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +297,7 @@
 				20A1220118CF8E3000BBEA7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

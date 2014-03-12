@@ -11,5 +11,5 @@
 
 void Implication::accept(LogicExprVisitor *v)
 {
-    
+    v->visitImplication(this);
 }

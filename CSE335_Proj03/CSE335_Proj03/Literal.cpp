@@ -17,5 +17,5 @@ bool Literal::getValue()
     
 void Literal::accept(LogicExprVisitor* v)
 {
-    
+    v->visitLiteral(this);
 }
