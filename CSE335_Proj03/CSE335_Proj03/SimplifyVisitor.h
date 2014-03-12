@@ -13,7 +13,7 @@
 #include <stack>
 #include "LogicExprVisitor.h"
 #include "Literal.h"
-#include "Negation.h"
+#include "Negate.h"
 #include "Variable.h"
 #include "And.h"
 #include "Or.h"
@@ -23,10 +23,10 @@
 class PrintVisitor: public LogicExprVisitor
 {
 private:
-    stack<bool> _myStack;
+    std::stack<bool> _myStack;
 public:
     virtual void visitLiteral(Literal* lit);
-    virtual void visitNegation(Negation* neg);
+    virtual void visitNegate(Negate* neg);
     virtual void visitVariable(Variable* var);
     virtual void visitAnd(And* a);
     virtual void visitOr(Or* o);

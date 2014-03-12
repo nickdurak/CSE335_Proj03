@@ -11,5 +11,5 @@
 
 void Or::accept(LogicExprVisitor *v)
 {
-    v->vistOr(this);
+    v->visitOr(this);
 }

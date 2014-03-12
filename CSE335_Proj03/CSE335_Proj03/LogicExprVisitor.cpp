@@ -6,9 +6,18 @@
 //  Copyright (c) 2014 Nick Durak. All rights reserved.
 //
 
-#include "LogicExprVisitor.h"
 #include <iostream>
 #include <stack>
+#include "LogicExprVisitor.h"
+#include "Literal.h"
+#include "Negate.h"
+#include "Variable.h"
+#include "BoolExpr.h"
+#include "And.h"
+#include "Or.h"
+#include "Implication.h"
+#include "Equivalence.h"
+
 
 
 void LogicExprVisitor::visitLiteral(Literal*)
@@ -21,7 +30,7 @@ void LogicExprVisitor::visitVariable(Variable*)
     
 }
 
-void LogicExprVisitor::visitNegation(Negation*)
+void LogicExprVisitor::visitNegate(Negate*)
 {
     
 }

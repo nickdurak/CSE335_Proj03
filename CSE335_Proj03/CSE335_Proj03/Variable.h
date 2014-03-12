@@ -19,11 +19,11 @@ class Variable: public LogicExpr
 private:
     bool m_value;
     bool m_assigned;
-    string m_name;
+    std::string m_name;
     
 public:
-    Variable(bool val, string name = "NOT SET!"): m_value(val), m_assigned(true), m_name(name) {};
-    Variable(string name = "NOT SET!"): m_assigned(false), m_name(name) {};
+    Variable(bool val, std::string name = "NOT SET!"): m_value(val), m_assigned(true), m_name(name) {};
+    Variable(std::string name = "NOT SET!"): m_assigned(false), m_name(name) {};
     bool getValue();
     void assign(bool val);
     
