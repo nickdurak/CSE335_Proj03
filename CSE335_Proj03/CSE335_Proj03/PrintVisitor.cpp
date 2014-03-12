@@ -44,12 +44,18 @@ void LogicExprVisitor::visitAnd(And* a)
 {
     cout << "(";
     a->getLeftExpr()->accept(this);
-    
+    cout << "&";
+    a->getRightExpr()->accept(this);
+    cout << "(";
 }
 
 void LogicExprVisitor::visitOr(Or* o)
 {
-    
+    cout << "(";
+    o->getLeftExpr()->accept(this);
+    cout << "&";
+    o->getRightExpr()->accept(this);
+    cout << "(";
 }
 
 void LogicExprVisitor::visitImplication(Implication* impl)
