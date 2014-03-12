@@ -14,7 +14,7 @@
 
 class LogicExprVisitor;
 
-class Equivalence:BoolExpr
+class Equivalence: public BoolExpr
 {
 public:
     Equivalence(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};

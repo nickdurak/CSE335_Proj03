@@ -14,7 +14,7 @@
 
 class LogicExprVisitor;
 
-class Or:BoolExpr
+class Or: public BoolExpr
 {
 public:
     Or(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};

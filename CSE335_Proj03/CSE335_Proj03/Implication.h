@@ -14,7 +14,7 @@
 
 class LogicExprVisitor;
 
-class Implication:BoolExpr
+class Implication: public BoolExpr
 {
 public:
     Implication(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};

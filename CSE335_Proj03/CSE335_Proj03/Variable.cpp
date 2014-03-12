@@ -23,5 +23,5 @@ void Variable::assign(bool val)
 
 void Variable::accept(LogicExprVisitor* v)
 {
-    
+    v->visitVariable(this);
 }
