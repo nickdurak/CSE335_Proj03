@@ -19,37 +19,45 @@
 #include "Implication.h"
 #include "Equivalence.h"
 
-void LogicExprVisitor::visitLiteral(Literal*)
+using namespace std;
+
+void LogicExprVisitor::visitLiteral(Literal* lit)
+{
+    if(lit->getValue() >= 0) cout << " " << lit->getValue() << " ";
+    else cout << "(" << lit->getValue() << ")";
+}
+
+void LogicExprVisitor::visitVariable(Variable* var)
+{
+    if(var->getValue() >= 0) cout << " " << var->getValue() << " ";
+    else cout << "(" << var->getValue() << ")";
+}
+
+void LogicExprVisitor::visitNegate(Negate* neg)
+{
+    cout << "(~";
+    neg->getExpr()->accept(this);
+    cout << ")";
+}
+
+void LogicExprVisitor::visitAnd(And* a)
+{
+    cout << "(";
+    a->getLeftExpr()->accept(this);
+    
+}
+
+void LogicExprVisitor::visitOr(Or* o)
 {
     
 }
 
-void LogicExprVisitor::visitVariable(Variable*)
+void LogicExprVisitor::visitImplication(Implication* impl)
 {
     
 }
 
-void LogicExprVisitor::visitNegate(Negate*)
-{
-    
-}
-
-void LogicExprVisitor::visitAnd(And*)
-{
-    
-}
-
-void LogicExprVisitor::visitOr(Or*)
-{
-    
-}
-
-void LogicExprVisitor::visitImplication(Implication*)
-{
-    
-}
-
-void LogicExprVisitor::visitEquivalence(Equivalence*)
+void LogicExprVisitor::visitEquivalence(Equivalence* equiv)
 {
     
 }

@@ -20,7 +20,7 @@
 #include "Implication.h"
 #include "Equivalence.h"
 
-class PrintVisitor: public LogicExprVisitor
+class SimplifyVisitor: public LogicExprVisitor
 {
 private:
     std::stack<bool> _myStack;
