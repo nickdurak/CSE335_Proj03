@@ -19,37 +19,37 @@
 #include "Equivalence.h"
 
 
-void LogicExprVisitor::visitLiteral(Literal*)
+void SimplifyVisitor::visitLiteral(Literal*)
 {
     
 }
 
-void LogicExprVisitor::visitVariable(Variable*)
+void SimplifyVisitor::visitVariable(Variable*)
 {
     
 }
 
-void LogicExprVisitor::visitNegate(Negate*)
+void SimplifyVisitor::visitNegate(Negate*)
 {
     
 }
 
-void LogicExprVisitor::visitAnd(And*)
+void SimplifyVisitor::visitAnd(And*)
 {
     
 }
 
-void LogicExprVisitor::visitOr(Or*)
+void SimplifyVisitor::visitOr(Or*)
 {
     
 }
 
-void LogicExprVisitor::visitImplication(Implication*)
+void SimplifyVisitor::visitImplication(Implication*)
 {
     
 }
 
-void LogicExprVisitor::visitEquivalence(Equivalence*)
+void SimplifyVisitor::visitEquivalence(Equivalence*)
 {
     
 }

@@ -17,7 +17,7 @@ class LogicExpr
 {
 public:
     virtual void accept(LogicExprVisitor*) = 0;
-    virtual ~LogicExpr() = 0;
+    virtual ~LogicExpr() {};
 };
 
 #endif /* defined(__CSE335_Proj03__LogicExpr__) */

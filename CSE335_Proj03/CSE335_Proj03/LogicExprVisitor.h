@@ -29,6 +29,7 @@ public:
     virtual void visitOr(Or*) = 0;
     virtual void visitImplication(Implication*) = 0;
     virtual void visitEquivalence(Equivalence*) = 0;
+    virtual ~LogicExprVisitor() {};
 };
 
 #endif /* defined(__CSE335_Proj03__LogicExprVisitor__) */

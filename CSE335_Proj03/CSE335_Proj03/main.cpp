@@ -23,7 +23,7 @@ int main(int argc, const char * argv[])
 {
     LogicExpr* ex = new Or(new And(new Negate(new Implication(new Literal(true), new Literal(false))), new Equivalence(new Literal(true), new Literal(false))), new Literal(false));
     
-    PrintVisitor* pv;
+    LogicExprVisitor* pv = new PrintVisitor();
     ex->accept(pv);
 
     delete ex;

@@ -21,57 +21,57 @@
 
 using namespace std;
 
-void LogicExprVisitor::visitLiteral(Literal* lit)
+void PrintVisitor::visitLiteral(Literal* lit)
 {
     if(lit->getValue() >= 0) cout << " " << lit->getValue() << " ";
     else cout << "(" << lit->getValue() << ")";
 }
 
-void LogicExprVisitor::visitVariable(Variable* var)
+void PrintVisitor::visitVariable(Variable* var)
 {
     if(var->getValue() >= 0) cout << " " << var->getValue() << " ";
     else cout << "(" << var->getValue() << ")";
 }
 
-void LogicExprVisitor::visitNegate(Negate* neg)
+void PrintVisitor::visitNegate(Negate* neg)
 {
     cout << "(~";
     neg->getExpr()->accept(this);
     cout << ")";
 }
 
-void LogicExprVisitor::visitAnd(And* a)
+void PrintVisitor::visitAnd(And* a)
 {
     cout << "(";
     a->getLeftExpr()->accept(this);
     cout << "&"; 
     a->getRightExpr()->accept(this);
-    cout << "(";
+    cout << ")";
 }
 
-void LogicExprVisitor::visitOr(Or* o)
+void PrintVisitor::visitOr(Or* o)
 {
     cout << "(";
     o->getLeftExpr()->accept(this);
     cout << "|";
     o->getRightExpr()->accept(this);
-    cout << "(";
+    cout << ")";
 }
 
-void LogicExprVisitor::visitImplication(Implication* impl)
+void PrintVisitor::visitImplication(Implication* impl)
 {
     cout << "(";
     impl->getLeftExpr()->accept(this);
     cout << ">";
     impl->getRightExpr()->accept(this);
-    cout << "(";
+    cout << ")";
 }
 
-void LogicExprVisitor::visitEquivalence(Equivalence* equiv)
+void PrintVisitor::visitEquivalence(Equivalence* equiv)
 {
     cout << "(";
     equiv->getLeftExpr()->accept(this);
     cout << "=";
     equiv->getRightExpr()->accept(this);
-    cout << "(";
+    cout << ")";
 }

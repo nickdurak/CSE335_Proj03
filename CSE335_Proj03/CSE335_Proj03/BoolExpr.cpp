@@ -20,3 +20,9 @@ LogicExpr* BoolExpr::getRightExpr()
     return m_rightPtr;
 }
 
+BoolExpr::~BoolExpr()
+{
+    delete m_leftPtr;
+    delete m_rightPtr;
+}
+

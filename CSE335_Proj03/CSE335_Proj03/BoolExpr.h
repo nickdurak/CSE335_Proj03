@@ -22,7 +22,7 @@ private:
     
 public:
     BoolExpr(LogicExpr* left, LogicExpr* right): m_leftPtr(left), m_rightPtr(right) {};
-    virtual ~BoolExpr() = 0;
+    virtual ~BoolExpr();
     
     LogicExpr* getLeftExpr();
     LogicExpr* getRightExpr();
