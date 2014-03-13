@@ -10,6 +10,7 @@
 #include "LogicExprVisitor.h"
 #include "PrintVisitor.h"
 #include "SimplifyVisitor.h"
+#include "EvaluateVisitor.h"
 #include "Literal.h"
 #include "Negate.h"
 #include "Variable.h"

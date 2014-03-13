@@ -25,6 +25,8 @@ public:
     Variable(bool val, std::string name = "NOT SET!"): m_value(val), m_assigned(true), m_name(name) {};
     Variable(std::string name = "NOT SET!"): m_assigned(false), m_name(name) {};
     bool getValue();
+    bool getAssigned();
+    std::string getName();
     void assign(bool val);
     
     

@@ -10,9 +10,21 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
+using namespace std;
+
 bool Variable::getValue()
 {
     return m_value;
+}
+
+bool Variable::getAssigned()
+{
+    return m_assigned;
+}
+
+string Variable::getName()
+{
+    return m_name;
 }
 
 void Variable::assign(bool val)

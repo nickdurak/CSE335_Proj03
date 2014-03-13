@@ -21,6 +21,7 @@
 		20A1222918D0E29600BBEA7E /* LogicExprVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222318D0E29600BBEA7E /* LogicExprVisitor.cpp */; };
 		20A1222A18D0E29600BBEA7E /* PrintVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222518D0E29600BBEA7E /* PrintVisitor.cpp */; };
 		20A1222B18D0E29600BBEA7E /* SimplifyVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222718D0E29600BBEA7E /* SimplifyVisitor.cpp */; };
+		20A1222E18D20C5500BBEA7E /* EvaluateVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A1222C18D20C5400BBEA7E /* EvaluateVisitor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		20A1222618D0E29600BBEA7E /* PrintVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintVisitor.h; sourceTree = "<group>"; };
 		20A1222718D0E29600BBEA7E /* SimplifyVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimplifyVisitor.cpp; sourceTree = "<group>"; };
 		20A1222818D0E29600BBEA7E /* SimplifyVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplifyVisitor.h; sourceTree = "<group>"; };
+		20A1222C18D20C5400BBEA7E /* EvaluateVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EvaluateVisitor.cpp; sourceTree = "<group>"; };
+		20A1222D18D20C5500BBEA7E /* EvaluateVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateVisitor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				20A1221E18CFD37100BBEA7E /* Implication.h */,
 				20A1222018CFD45F00BBEA7E /* Equivalence.cpp */,
 				20A1222118CFD45F00BBEA7E /* Equivalence.h */,
+				20A1222C18D20C5400BBEA7E /* EvaluateVisitor.cpp */,
+				20A1222D18D20C5500BBEA7E /* EvaluateVisitor.h */,
 			);
 			path = CSE335_Proj03;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				20A1220D18CF9AC100BBEA7E /* Variable.cpp in Sources */,
 				20A1221318CF9E4F00BBEA7E /* Negate.cpp in Sources */,
 				20A1222918D0E29600BBEA7E /* LogicExprVisitor.cpp in Sources */,
+				20A1222E18D20C5500BBEA7E /* EvaluateVisitor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
