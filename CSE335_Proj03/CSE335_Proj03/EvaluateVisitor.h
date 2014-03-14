@@ -25,7 +25,7 @@ class EvaluateVisitor: public LogicExprVisitor
 private:
     std::stack<bool> m_myStack;
 public:
-    double getValue();
+    bool getValue();
     
     virtual void visitLiteral(Literal* lit);
     virtual void visitNegate(Negate* neg);

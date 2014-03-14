@@ -23,14 +23,12 @@ using namespace std;
 
 void PrintVisitor::visitLiteral(Literal* lit)
 {
-    if(lit->getValue() >= 0) cout << " " << lit->getValue() << " ";
-    else cout << "(" << lit->getValue() << ")";
+    cout << " " << lit->getValue() << " ";
 }
 
 void PrintVisitor::visitVariable(Variable* var)
 {
-    if(var->getValue() >= 0) cout << " " << var->getValue() << " ";
-    else cout << "(" << var->getValue() << ")";
+    cout << " " << var->getValue() << " ";
 }
 
 void PrintVisitor::visitNegate(Negate* neg)

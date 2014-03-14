@@ -20,14 +20,28 @@
 #include "Implication.h"
 #include "Equivalence.h"
 
+using namespace std;
+
 int main(int argc, const char * argv[])
 {
     LogicExpr* ex = new Or(new And(new Negate(new Implication(new Literal(true), new Literal(false))), new Equivalence(new Literal(true), new Literal(false))), new Literal(false));
     
-    LogicExprVisitor* pv = new PrintVisitor();
-    ex->accept(pv);
+    //LogicExprVisitor* pv = new PrintVisitor();
+    //LogicExprVisitor* ev = new EvaluateVisitor();
+    EvaluateVisitor ev;
+    PrintVisitor pv;
+    cout.setf(ios::boolalpha);
+    
+    ex->accept(&pv);
+    
+    ex->accept(&ev);
+    
+    //bool result = ev.getValue();
+    cout << " Evaluates to ";
+    cout << ev.getValue() << ".\n";
 
     delete ex;
-    delete pv;
+ //   delete pv;
+   // delete ev;
 }
 
