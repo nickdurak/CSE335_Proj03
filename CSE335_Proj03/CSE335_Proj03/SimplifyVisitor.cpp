@@ -19,37 +19,62 @@
 #include "Equivalence.h"
 
 
-void LogicExprVisitor::visitLiteral(Literal*)
+/*
+ if(string_name = "A & false") string_name = "false";
+ if(string_name = "false & A") string_name = "false";
+ if(string_name = "A & true") string_name = "A";
+ if(string_name = "true & A") string_name = "A";
+ if(string_name = "A | false") string_name = "A";
+ if(string_name = "false | A") string_name = "A";
+ if(string_name = "A | true") string_name = "true";
+ if(string_name = "true | A") string_name = "true";
+ if(string_name = "A > false") string_name = "~A";
+ if(string_name = "false > A") string_name = "true";
+ if(string_name = "A > true") string_name = "true";
+ if(string_name = "true > A") string_name = "A";
+ if(string_name = "A = false") string_name = "~A";
+ if(string_name = "false = A") string_name = "~A";
+ if(string_name = "A = true") string_name = "A";
+ if(string_name = "true = A") string_name = "A";
+ */
+bool SimplifyVisitor::getValue()
+{
+    bool result = m_myStack.top();
+    m_myStack.pop();
+    return result;
+}
+
+void SimplifyVisitor::visitLiteral(Literal* lit)
+{
+    m_myStack.push(lit->getValue());
+}
+
+void SimplifyVisitor::visitVariable(Variable* var)
 {
     
 }
 
-void LogicExprVisitor::visitVariable(Variable*)
+void SimplifyVisitor::visitNegate(Negate* neg)
 {
     
 }
 
-void LogicExprVisitor::visitNegate(Negate*)
+void SimplifyVisitor::visitAnd(And* a)
 {
     
 }
 
-void LogicExprVisitor::visitAnd(And*)
+void SimplifyVisitor::visitOr(Or* o)
 {
     
 }
 
-void LogicExprVisitor::visitOr(Or*)
+void SimplifyVisitor::visitImplication(Implication* impl)
 {
     
 }
 
-void LogicExprVisitor::visitImplication(Implication*)
-{
-    
-}
-
-void LogicExprVisitor::visitEquivalence(Equivalence*)
+void SimplifyVisitor::visitEquivalence(Equivalence* equiv)
 {
     
 }

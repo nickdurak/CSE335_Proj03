@@ -10,7 +10,6 @@
 #define __CSE335_Proj03__PrintVisitor__
 
 #include <iostream>
-#include <stack>
 #include "LogicExprVisitor.h"
 #include "Literal.h"
 #include "Negate.h"
@@ -22,8 +21,6 @@
 
 class PrintVisitor: public LogicExprVisitor
 {
-private:
-    std::stack<bool> _myStack;
 public:
     virtual void visitLiteral(Literal* lit);
     virtual void visitNegate(Negate* neg);

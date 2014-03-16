@@ -8,7 +8,6 @@
 
 
 #include <iostream>
-#include <stack>
 #include "PrintVisitor.h"
 #include "Literal.h"
 #include "Negate.h"

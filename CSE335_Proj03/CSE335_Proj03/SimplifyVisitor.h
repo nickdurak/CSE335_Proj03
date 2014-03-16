@@ -23,8 +23,9 @@
 class SimplifyVisitor: public LogicExprVisitor
 {
 private:
-    std::stack<bool> _myStack;
+    std::stack<bool> m_myStack;
 public:
+    bool getValue();
     virtual void visitLiteral(Literal* lit);
     virtual void visitNegate(Negate* neg);
     virtual void visitVariable(Variable* var);
