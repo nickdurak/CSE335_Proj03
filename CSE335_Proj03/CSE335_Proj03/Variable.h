@@ -10,6 +10,7 @@
 #define __CSE335_Proj03__Variable__
 
 #include <iostream>
+#include <string>
 #include "LogicExpr.h"
 
 class LogicExprVisitor;
@@ -22,7 +23,6 @@ private:
     std::string m_name;
     
 public:
-    Variable(bool val, std::string name = "NOT SET!"): m_value(val), m_assigned(true), m_name(name) {};
     Variable(std::string name = "NOT SET!"): m_assigned(false), m_name(name) {};
     bool getValue();
     bool getAssigned();

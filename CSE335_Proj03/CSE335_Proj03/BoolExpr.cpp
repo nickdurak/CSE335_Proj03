@@ -22,7 +22,13 @@ LogicExpr* BoolExpr::getRightExpr()
 
 BoolExpr::~BoolExpr()
 {
-    delete m_leftPtr;
-    delete m_rightPtr;
+    if (m_leftPtr != NULL)
+    {
+        delete m_leftPtr;
+    }
+    if (m_rightPtr != NULL)
+    {
+        delete m_rightPtr;
+    }
 }
 

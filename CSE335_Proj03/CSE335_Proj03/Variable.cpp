@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Nick Durak. All rights reserved.
 //
 
+#include <string>
 #include "Variable.h"
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"

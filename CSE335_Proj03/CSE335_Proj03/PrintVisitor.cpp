@@ -28,7 +28,7 @@ void PrintVisitor::visitLiteral(Literal* lit)
 
 void PrintVisitor::visitVariable(Variable* var)
 {
-    cout << " " << var->getValue() << " ";
+    cout << " " << var->getName() << " ";
 }
 
 void PrintVisitor::visitNegate(Negate* neg)
