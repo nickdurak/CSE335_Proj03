@@ -42,7 +42,7 @@ int main(int argc, const char * argv[])
     
     EvaluateVisitor ev;
     PrintVisitor pv;
-    //SimplifyVisitor sv;
+    SimplifyVisitor sv;
     
     cout.setf(ios::boolalpha);
     
@@ -68,8 +68,8 @@ int main(int argc, const char * argv[])
     
     ex5->accept(&pv);
     cout << "\nsimplified version:  ";
-    // ex5->accept(&sv);
-    // cout << endl;
+    ex5->accept(&sv);
+    sv.getValue();
     bool tmp = 0;
     for (int i = 0; i < 3; ++i)
     {

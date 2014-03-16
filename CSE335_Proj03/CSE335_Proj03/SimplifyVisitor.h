@@ -10,8 +10,9 @@
 #define __CSE335_Proj03__SimplifyVisitor__
 
 #include <iostream>
-#include <stack>
+#include <vector>
 #include "LogicExprVisitor.h"
+#include "PrintVisitor.h"
 #include "Literal.h"
 #include "Negate.h"
 #include "Variable.h"
@@ -23,9 +24,12 @@
 class SimplifyVisitor: public LogicExprVisitor
 {
 private:
-    std::stack<bool> m_myStack;
+    std::vector<std::string> m_myVector;
 public:
-    bool getValue();
+    void getValue();
+    std::string simplified(int pos);
+    bool stringToBool(std::string const& s);
+    std::string boolToString(bool const& b);
     virtual void visitLiteral(Literal* lit);
     virtual void visitNegate(Negate* neg);
     virtual void visitVariable(Variable* var);
@@ -33,7 +37,6 @@ public:
     virtual void visitOr(Or* o);
     virtual void visitImplication(Implication* impl);
     virtual void visitEquivalence(Equivalence* equiv);
-    
 };
 
 #endif /* defined(__CSE335_Proj03__SimplifyVisitor__) */
