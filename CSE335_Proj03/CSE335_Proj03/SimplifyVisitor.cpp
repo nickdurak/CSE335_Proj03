@@ -21,7 +21,14 @@
 
 void SimplifyVisitor::visitLiteral(Literal*)
 {
-    
+    bool result = m_myStack.top();
+    m_myStack.pop();
+    return result;
+}
+
+void SimplifyVisitor::visitLiteral(Literal* lit)
+{
+    m_myStack.push(lit->getValue());
 }
 
 void SimplifyVisitor::visitVariable(Variable*)
