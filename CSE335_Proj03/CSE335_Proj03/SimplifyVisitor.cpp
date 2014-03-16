@@ -20,12 +20,12 @@
 
 
 /*
- if(string_name = "A & false") string_name = "false";
+ if(string_name = "A & false") string_name = "fal4se";
  if(string_name = "false & A") string_name = "false";
  if(string_name = "A & true") string_name = "A";
  if(string_name = "true & A") string_name = "A";
  if(string_name = "A | false") string_name = "A";
- if(string_name = "false | A") string_name = "A";
+ if(string_name = "false | A") string_name = "A";;
  if(string_name = "A | true") string_name = "true";
  if(string_name = "true | A") string_name = "true";
  if(string_name = "A > false") string_name = "~A";
