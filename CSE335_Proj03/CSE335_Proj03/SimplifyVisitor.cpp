@@ -19,77 +19,11 @@
 
 using namespace std;
 
-/*
- if(string_name = "A & false") string_name = "fal4se";
- if(string_name = "false & A") string_name = "false";
- if(string_name = "A & true") string_name = "A";
- if(string_name = "true & A") string_name = "A";
- if(string_name = "A | false") string_name = "A";
- if(string_name = "false | A") string_name = "A";;
- if(string_name = "A | true") string_name = "true";
- if(string_name = "true | A") string_name = "true";
- if(string_name = "A > false") string_name = "~A";
- if(string_name = "false > A") string_name = "true";
- if(string_name = "A > true") string_name = "true";
- if(string_name = "true > A") string_name = "A";
- if(string_name = "A = false") string_name = "~A";
- if(string_name = "false = A") string_name = "~A";
- if(string_name = "A = true") string_name = "A";
- if(string_name = "true = A") string_name = "A";
- */
-void SimplifyVisitor::getValue()
+string SimplifyVisitor::getValue()
 {
-    if (m_myVector.size() > 0)
-    {
-        cout << simplified(m_myVector.size() - 1) << endl;
-    }
-}
-
-string SimplifyVisitor::simplified(int pos)
-{
-    string result = "(";
-    if (!((m_myVector[pos] == "&") || (m_myVector[pos] == "|") || (m_myVector[pos] == ">") || (m_myVector[pos] == "=") || (m_myVector[pos] == "~")))
-    {
-        result += m_myVector[pos];
-        result += " ";
-        return result;
-    }
-    
-    if (m_myVector[pos] == "~")
-    {
-        result += m_myVector[pos];
-        result = simplified(--pos);
-        result += " ";
-        return result;
-    }
-
-    result = simplified(--pos);
-    result += m_myVector[pos];
-    result += " ";
-    result = simplified(--pos);
-    result += ")";
+    string result = m_myStack.top();
+    m_myStack.pop();
     return result;
-
-    /*if (pos == 0) return result;
-    
-    if (!((m_myVector[pos] == "&") || (m_myVector[pos] == "|") || (m_myVector[pos] == ">") || (m_myVector[pos] == "=")))
-    {
-        result += m_myVector[pos];
-        --pos;
-    }
-    if (pos == 0) return result;
-    
-    if (m_myVector[pos] == "~")
-    {
-        result += m_myVector[pos];
-        result += simplified(--pos);
-        --pos;
-    }
-    if (pos == 0) return result;
-    
-    
-    result += ")";
-    return result;*/
 }
 
 bool SimplifyVisitor::stringToBool(std::string const& s)
@@ -107,10 +41,10 @@ void SimplifyVisitor::visitLiteral(Literal* lit)
 {
     if (lit->getValue())
     {
-        m_myVector.push_back("1");
+        m_myStack.push("1");
         return;
     }
-    m_myVector.push_back("0");
+    m_myStack.push("0");
 }
 
 void SimplifyVisitor::visitVariable(Variable* var)
@@ -119,32 +53,47 @@ void SimplifyVisitor::visitVariable(Variable* var)
     {
         if (var->getValue())
         {
-            m_myVector.push_back("1");
+            m_myStack.push("1");
             return;
         }
-        m_myVector.push_back("0");
+        m_myStack.push("0");
         return;
     }
-    m_myVector.push_back(var->getName());
+    m_myStack.push(var->getName());
 }
 
 void SimplifyVisitor::visitNegate(Negate* neg)
 {
     neg->getExpr()->accept(this);
     
-    string val = m_myVector.back();
-    m_myVector.pop_back();
+    string val = m_myStack.top();
+    m_myStack.pop();
     
     if ((val == "0") || (val == "1"))
     {
         bool v = stringToBool(val);
         
-        m_myVector.push_back(boolToString(!v));
+        m_myStack.push(boolToString(!v));
         return;
     }
-
-    m_myVector.push_back(val);
-    m_myVector.push_back("~");
+    
+    if (!((val == "&") || (val == "|") || (val == ">") || (val == "=") || (val == "~")))
+    {
+        m_myStack.push("~" + val);
+        return;
+    }
+    if (val[0] == '~')
+    {
+        string newVal;
+        for (int i = 1; i < val.size(); ++i)
+        {
+            newVal += val[i];
+        }
+        m_myStack.push(newVal);
+        return;
+    }
+    
+    
 }
 
 void SimplifyVisitor::visitAnd(And* a)
@@ -152,42 +101,40 @@ void SimplifyVisitor::visitAnd(And* a)
     a->getRightExpr()->accept(this);
     a->getLeftExpr()->accept(this);
     
-    string lval = m_myVector.back();
-    m_myVector.pop_back();
-    string rval = m_myVector.back();
-    m_myVector.pop_back();
+    string lval = m_myStack.top();
+    m_myStack.pop();
+    string rval = m_myStack.top();
+    m_myStack.pop();
     
     if (((lval == "0") || (lval == "1")) && ((rval == "0") || (rval == "1")))
     {
         bool r = stringToBool(rval);
         bool l = stringToBool(lval);
         
-        m_myVector.push_back(boolToString(l && r));
+        m_myStack.push(boolToString(l && r));
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "0")
     {
-        m_myVector.push_back("0");
+        m_myStack.push("0");
         return;
     }
     if (lval == "0" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back("0");
+        m_myStack.push("0");
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "1")
     {
-        m_myVector.push_back(lval);
+        m_myStack.push(lval);
         return;
     }
     if (lval == "1" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back(rval);
+        m_myStack.push(rval);
         return;
     }
-    m_myVector.push_back(rval);
-    m_myVector.push_back(lval);
-    m_myVector.push_back("&");
+    m_myStack.push("(" + lval + " & " + rval + ")");
 }
 
 void SimplifyVisitor::visitOr(Or* o)
@@ -195,42 +142,40 @@ void SimplifyVisitor::visitOr(Or* o)
     o->getRightExpr()->accept(this);
     o->getLeftExpr()->accept(this);
 
-    string lval = m_myVector.back();
-    m_myVector.pop_back();
-    string rval = m_myVector.back();
-    m_myVector.pop_back();
+    string lval = m_myStack.top();
+    m_myStack.pop();
+    string rval = m_myStack.top();
+    m_myStack.pop();
     
     if (((lval == "0") || (lval == "1")) && ((rval == "0") || (rval == "1")))
     {
         bool r = stringToBool(rval);
         bool l = stringToBool(lval);
         
-        m_myVector.push_back(boolToString(l || r));
+        m_myStack.push(boolToString(l || r));
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "0")
     {
-        m_myVector.push_back(lval);
+        m_myStack.push(lval);
         return;
     }
     if (lval == "0" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back(rval);
+        m_myStack.push(rval);
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "1")
     {
-        m_myVector.push_back("1");
+        m_myStack.push("1");
         return;
     }
     if (lval == "1" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back("1");
+        m_myStack.push("1");
         return;
     }
-    m_myVector.push_back(rval);
-    m_myVector.push_back(lval);
-    m_myVector.push_back("|");
+    m_myStack.push("(" + lval + " | " + rval + ")");
 }
 
 void SimplifyVisitor::visitImplication(Implication* impl)
@@ -238,43 +183,40 @@ void SimplifyVisitor::visitImplication(Implication* impl)
     impl->getRightExpr()->accept(this);
     impl->getLeftExpr()->accept(this);
 
-    string lval = m_myVector.back();
-    m_myVector.pop_back();
-    string rval = m_myVector.back();
-    m_myVector.pop_back();
+    string lval = m_myStack.top();
+    m_myStack.pop();
+    string rval = m_myStack.top();
+    m_myStack.pop();
     
     if (((lval == "0") || (lval == "1")) && ((rval == "0") || (rval == "1")))
     {
         bool r = stringToBool(rval);
         bool l = stringToBool(lval);
         
-        m_myVector.push_back(boolToString(!l || r));
+        m_myStack.push(boolToString(!l || r));
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "0")
     {
-        m_myVector.push_back(lval);
-        m_myVector.push_back("~");
+        m_myStack.push("~" + lval);
         return;
     }
     if (lval == "0" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back("1");
+        m_myStack.push("1");
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "1")
     {
-        m_myVector.push_back("1");
+        m_myStack.push("1");
         return;
     }
     if (lval == "1" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back(rval);
+        m_myStack.push(rval);
         return;
     }
-    m_myVector.push_back(rval);
-    m_myVector.push_back(lval);
-    m_myVector.push_back(">");
+    m_myStack.push("(" + lval + " > " + rval + ")");
 }
 
 void SimplifyVisitor::visitEquivalence(Equivalence* equiv)
@@ -282,42 +224,38 @@ void SimplifyVisitor::visitEquivalence(Equivalence* equiv)
     equiv->getRightExpr()->accept(this);
     equiv->getLeftExpr()->accept(this);
     
-    string lval = m_myVector.back();
-    m_myVector.pop_back();
-    string rval = m_myVector.back();
-    m_myVector.pop_back();
+    string lval = m_myStack.top();
+    m_myStack.pop();
+    string rval = m_myStack.top();
+    m_myStack.pop();
     
     if (((lval == "0") || (lval == "1")) && ((rval == "0") || (rval == "1")))
     {
         bool r = stringToBool(rval);
         bool l = stringToBool(lval);
         
-        m_myVector.push_back(boolToString(l == r));
+        m_myStack.push(boolToString(l == r));
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "0")
     {
-        m_myVector.push_back(lval);
-        m_myVector.push_back("~");
+        m_myStack.push("~" + lval);
         return;
     }
     if (lval == "0" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back(rval);
-        m_myVector.push_back("~");
+        m_myStack.push("~" + rval);
         return;
     }
     if (!((lval == "0") || (lval == "1")) && rval == "1")
     {
-        m_myVector.push_back(lval);
+        m_myStack.push(lval);
         return;
     }
     if (lval == "1" && !((rval == "0") || (rval == "1")))
     {
-        m_myVector.push_back(rval);
+        m_myStack.push(rval);
         return;
     }
-    m_myVector.push_back(rval);
-    m_myVector.push_back(lval);
-    m_myVector.push_back("=");
+    m_myStack.push("(" + lval + " = " + rval + ")");
 }

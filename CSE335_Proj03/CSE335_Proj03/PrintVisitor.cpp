@@ -22,26 +22,25 @@ using namespace std;
 
 void PrintVisitor::visitLiteral(Literal* lit)
 {
-    cout << " " << lit->getValue() << " ";
+    cout << lit->getValue() << " ";
 }
 
 void PrintVisitor::visitVariable(Variable* var)
 {
-    cout << " " << var->getName() << " ";
+    cout << var->getName() << " ";
 }
 
 void PrintVisitor::visitNegate(Negate* neg)
 {
-    cout << "(~";
+    cout << "~";
     neg->getExpr()->accept(this);
-    cout << ")";
 }
 
 void PrintVisitor::visitAnd(And* a)
 {
     cout << "(";
     a->getLeftExpr()->accept(this);
-    cout << "&"; 
+    cout << " & ";
     a->getRightExpr()->accept(this);
     cout << ")";
 }
@@ -50,7 +49,7 @@ void PrintVisitor::visitOr(Or* o)
 {
     cout << "(";
     o->getLeftExpr()->accept(this);
-    cout << "|";
+    cout << " | ";
     o->getRightExpr()->accept(this);
     cout << ")";
 }
@@ -59,7 +58,7 @@ void PrintVisitor::visitImplication(Implication* impl)
 {
     cout << "(";
     impl->getLeftExpr()->accept(this);
-    cout << ">";
+    cout << " > ";
     impl->getRightExpr()->accept(this);
     cout << ")";
 }
@@ -68,7 +67,7 @@ void PrintVisitor::visitEquivalence(Equivalence* equiv)
 {
     cout << "(";
     equiv->getLeftExpr()->accept(this);
-    cout << "=";
+    cout << " = ";
     equiv->getRightExpr()->accept(this);
     cout << ")";
 }

@@ -69,7 +69,7 @@ int main(int argc, const char * argv[])
     ex5->accept(&pv);
     cout << "\nsimplified version:  ";
     ex5->accept(&sv);
-    sv.getValue();
+    cout << sv.getValue() << endl;
     bool tmp = 0;
     for (int i = 0; i < 3; ++i)
     {
@@ -83,12 +83,16 @@ int main(int argc, const char * argv[])
         cin >> tmp;
         z1->assign(tmp);
         
-        cout << "\nEvaluation Result\n";
+        cout << "Evaluation Result\n";
         ex5->accept(&pv);
         ex5->accept(&ev);
-        cout << " evaluates to " << ev.getValue() << ".\n";
+        cout << " evaluates to " << ev.getValue() << ".\n\n";
     }
     
+    ex6->accept(&pv);
+    cout << "\nsimplified version:  ";
+    ex6->accept(&sv);
+    cout << sv.getValue() << endl;
     for (int i = 0; i < 3; ++i)
     {
         cout << "Enter the value of x: ";
@@ -104,23 +108,18 @@ int main(int argc, const char * argv[])
         cin >> tmp;
         w->assign(tmp);
         
-        cout << "\nEvaluation Result\n";
+        cout << "Evaluation Result\n";
         ex6->accept(&pv);
         ex6->accept(&ev);
-        cout << " evaluates to " << ev.getValue() << ".\n";
+        cout << " evaluates to " << ev.getValue() << ".\n\n";
     }
     
 
     delete ex1;
-    
     delete ex2;
-    
     delete ex3;
-    
     delete ex4;
-    
     delete ex5;
-    
     delete ex6;
 }
 
