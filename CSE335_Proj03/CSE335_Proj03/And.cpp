@@ -9,6 +9,11 @@
 #include "And.h"
 #include "LogicExprVisitor.h"
 
+/*And::And(const And& other)
+{
+    And(other.getLeftExpr(), other.getRightExpr());
+}*/
+
 void And::accept(LogicExprVisitor *v)
 {
     v->visitAnd(this);

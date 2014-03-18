@@ -24,9 +24,10 @@ private:
     
 public:
     Variable(std::string name = "NOT SET!"): m_assigned(false), m_name(name) {};
-    bool getValue();
-    bool getAssigned();
-    std::string getName();
+    //Variable(const Variable& other);
+    bool getValue() const;
+    bool getAssigned() const;
+    std::string getName() const;
     void assign(bool val);
     
     

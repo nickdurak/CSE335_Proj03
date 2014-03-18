@@ -24,8 +24,8 @@ public:
     BoolExpr(LogicExpr* left, LogicExpr* right): m_leftPtr(left), m_rightPtr(right) {};
     virtual ~BoolExpr();
     
-    LogicExpr* getLeftExpr();
-    LogicExpr* getRightExpr();
+    LogicExpr* getLeftExpr() const;
+    LogicExpr* getRightExpr() const;
 };
 
 #endif /* defined(__CSE335_Proj03__BoolExpr__) */

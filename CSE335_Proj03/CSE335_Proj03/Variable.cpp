@@ -13,17 +13,22 @@
 
 using namespace std;
 
-bool Variable::getValue()
+/*Variable::Variable(const Variable& other)
+{
+    Variable(other.getName());
+}*/
+
+bool Variable::getValue() const
 {
     return m_value;
 }
 
-bool Variable::getAssigned()
+bool Variable::getAssigned() const
 {
     return m_assigned;
 }
 
-string Variable::getName()
+string Variable::getName() const
 {
     return m_name;
 }

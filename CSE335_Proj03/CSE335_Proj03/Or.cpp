@@ -9,6 +9,11 @@
 #include "Or.h"
 #include "LogicExprVisitor.h"
 
+/*Or::Or(Or& other)
+{
+    Or(other.getLeftExpr(), other.getRightExpr());
+}*/
+
 void Or::accept(LogicExprVisitor *v)
 {
     v->visitOr(this);

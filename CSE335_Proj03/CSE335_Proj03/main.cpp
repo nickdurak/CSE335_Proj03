@@ -33,18 +33,37 @@ int main(int argc, const char * argv[])
     Variable* y2 = new Variable("y");
     Variable* z2 = new Variable("z");
     
+    Variable* x3 = new Variable("x");
+    Variable* y3 = new Variable("y");
+    Variable* z3 = new Variable("z");
+    Variable* w1 = new Variable("w");
+    
     LogicExpr* ex1 = new And(new Literal(true), new Literal(false));
+    //LogicExpr* exTest = ex1;
     LogicExpr* ex2 = new Or(new Literal(true), new Literal(false));
     LogicExpr* ex3 = new Implication(new And(new Literal(true), new Literal(false)), new Or(new Literal(true), new Literal(false)));
     LogicExpr* ex4 = new Equivalence(new Negate(new Or(new Literal(true), new Literal(false))), new Literal(true));
     LogicExpr* ex5 = new Equivalence(new Implication(new And(x1, new Literal(true)), new Or(new Literal(false), y1) ), z1);
     LogicExpr* ex6 = new Equivalence(new Implication(new And(new Or(x2, y2), z2), new Or(new Negate(w), new Literal(false))), new Literal(true));
+    LogicExpr* ex7 = new Negate(new Negate (new Negate (new Equivalence(new Implication(new And(new Or(x3, y3), z3), new Or(new Negate(new Negate(w1)), new Literal(false))), new Literal(true)))));
     
     EvaluateVisitor ev;
     PrintVisitor pv;
     SimplifyVisitor sv;
     
     cout.setf(ios::boolalpha);
+    
+    /*cout << "testing copy constructor:\n";
+    exTest->accept(&pv);
+    exTest->accept(&ev);
+    cout << " Evaluates to " << ev.getValue() << ".\n";*/
+    
+    cout << endl << endl;
+    ex7->accept(&pv);
+    cout << "\nsimplified version:  ";
+    ex7->accept(&sv);
+    cout << sv.getValue() << endl;
+    
     
     cout << "TEST SET ONE\n"
         << "____________\n";
@@ -116,10 +135,12 @@ int main(int argc, const char * argv[])
     
 
     delete ex1;
+    //delete exTest;
     delete ex2;
     delete ex3;
     delete ex4;
     delete ex5;
     delete ex6;
+    delete ex7;
 }
 

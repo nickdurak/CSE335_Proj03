@@ -10,7 +10,12 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
-LogicExpr* Negate::getExpr()
+/*Negate::Negate(const Negate& other)
+{
+    Negate(other.getExpr());
+}*/
+
+LogicExpr* Negate::getExpr() const
 {
     return m_exprPtr;
 }

@@ -77,23 +77,18 @@ void SimplifyVisitor::visitNegate(Negate* neg)
         return;
     }
     
-    if (!((val == "&") || (val == "|") || (val == ">") || (val == "=") || (val == "~")))
+    if (!(val[0] == '~'))
     {
         m_myStack.push("~" + val);
         return;
     }
-    if (val[0] == '~')
+    string newVal;
+    for (int i = 1; i < val.size(); ++i)
     {
-        string newVal;
-        for (int i = 1; i < val.size(); ++i)
-        {
-            newVal += val[i];
-        }
-        m_myStack.push(newVal);
-        return;
+        newVal += val[i];
     }
-    
-    
+    m_myStack.push(newVal);
+    return;
 }
 
 void SimplifyVisitor::visitAnd(And* a)

@@ -10,12 +10,12 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
-LogicExpr* BoolExpr::getLeftExpr()
+LogicExpr* BoolExpr::getLeftExpr() const
 {
     return m_leftPtr;
 }
 
-LogicExpr* BoolExpr::getRightExpr()
+LogicExpr* BoolExpr::getRightExpr() const
 {
     return m_rightPtr;
 }
