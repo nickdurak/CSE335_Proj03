@@ -28,7 +28,6 @@ private:
     
 public:
     Literal(bool val = true): m_value(val) {};
-    Literal(const Literal& other);
     bool getValue() const;
     
     virtual void accept(LogicExprVisitor* v);

@@ -1,10 +1,17 @@
-//
-//  SimplifyVisitor.cpp
-//  CSE335_Proj03
-//
-//  Created by Barend Ungrodt on 3/11/14.
-//  Copyright (c) 2014 Nick Durak. All rights reserved.
-//
+/******************************************************
+ FILE: SimplifyVisitor.cpp
+ 
+ ABSTRACT:
+ Provides implementation of the SimplifyVisitor.
+ 
+ AUTHOR:
+ Nick Durak
+ Barend Ungrodt
+ 
+ CREATION DATE:
+ 11/03/2014
+ 
+ *******************************************************/
 
 #include <iostream>
 #include "SimplifyVisitor.h"
@@ -19,8 +26,15 @@
 
 using namespace std;
 
+/*
+ Returns a string containing the simplified expression
+ */
 string SimplifyVisitor::getValue()
 {
+    if (m_myStack.size() == 0)
+    {
+        return "Please simplify expression first.";
+    }
     string result = m_myStack.top();
     m_myStack.pop();
     return result;

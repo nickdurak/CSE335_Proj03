@@ -25,13 +25,12 @@ class LogicExprVisitor;
 class Variable: public LogicExpr
 {
 private:
-    bool m_value;
-    bool m_assigned;
-    std::string m_name;
+    bool m_value; //value stored in variable
+    bool m_assigned; //true if value has been assigned, false otherwise
+    std::string m_name; //name of variable
     
 public:
     Variable(std::string name = "NOT SET!"): m_assigned(false), m_name(name) {};
-    //Variable(const Variable& other);
     bool getValue() const;
     bool getAssigned() const;
     std::string getName() const;

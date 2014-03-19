@@ -1,10 +1,17 @@
-//
-//  Equivalence.cpp
-//  CSE335_Proj03
-//
-//  Created by Nick Durak on 3/11/14.
-//  Copyright (c) 2014 Nick Durak. All rights reserved.
-//
+/******************************************************
+ FILE: Equivalence.cpp
+ 
+ ABSTRACT:
+ Provides implementation of the Equivalence.
+ 
+ AUTHOR:
+ Nick Durak
+ Barend Ungrodt
+ 
+ CREATION DATE:
+ 11/03/2014
+ 
+ *******************************************************/
 
 #include "Equivalence.h"
 #include "LogicExprVisitor.h"

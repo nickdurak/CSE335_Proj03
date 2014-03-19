@@ -1,10 +1,17 @@
-//
-//  BoolExpr.h
-//  CSE335_Proj03
-//
-//  Created by Nick Durak on 3/11/14.
-//  Copyright (c) 2014 Nick Durak. All rights reserved.
-//
+/******************************************************
+ FILE: BoolExpr.h
+ 
+ ABSTRACT:
+ Provides declaration for BoolExpr.
+ 
+ AUTHOR:
+ Nick Durak
+ Barend Ungrodt
+ 
+ CREATION DATE:
+ 11/03/2014
+ 
+ *******************************************************/
 
 #ifndef __CSE335_Proj03__BoolExpr__
 #define __CSE335_Proj03__BoolExpr__

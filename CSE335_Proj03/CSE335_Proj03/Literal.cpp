@@ -17,11 +17,9 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
-Literal::Literal(const Literal& other)
-{
-    Literal(other.getValue());
-}
-
+/*
+ return value
+ */
 bool Literal::getValue() const
 {
     return m_value;

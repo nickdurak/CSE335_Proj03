@@ -1,21 +1,34 @@
-//
-//  BoolExpr.cpp
-//  CSE335_Proj03
-//
-//  Created by Nick Durak on 3/11/14.
-//  Copyright (c) 2014 Nick Durak. All rights reserved.
-//
+/******************************************************
+ FILE: BoolExpr.cpp
+ 
+ ABSTRACT:
+ Provides implementation of the BoolExpr.
+ 
+ AUTHOR:
+ Nick Durak
+ Barend Ungrodt
+ 
+ CREATION DATE:
+ 11/03/2014
+ 
+ *******************************************************/
 
 #include "BoolExpr.h"
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
+/*
+ copy constructor
+ */
 BoolExpr::BoolExpr(const BoolExpr& other)
 {
     m_leftPtr = other.m_leftPtr;
     m_rightPtr = other.m_rightPtr;
 }
 
+/*
+ assignment operator
+ */
 BoolExpr& BoolExpr::operator= (const BoolExpr& other)
 {
     if (this == &other)
@@ -27,16 +40,25 @@ BoolExpr& BoolExpr::operator= (const BoolExpr& other)
     return *this;
 }
 
+/*
+ return left pointer
+ */
 LogicExpr* BoolExpr::getLeftExpr() const
 {
     return m_leftPtr;
 }
 
+/*
+ return right pointer
+ */
 LogicExpr* BoolExpr::getRightExpr() const
 {
     return m_rightPtr;
 }
 
+/*
+ destructor
+ */
 BoolExpr::~BoolExpr()
 {
     if (m_leftPtr != NULL)

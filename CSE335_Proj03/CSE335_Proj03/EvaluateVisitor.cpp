@@ -1,10 +1,17 @@
-//
-//  EvaluateVisitor.cpp
-//  CSE335_Proj03
-//
-//  Created by Nick Durak on 3/13/14.
-//  Copyright (c) 2014 Nick Durak. All rights reserved.
-//
+/******************************************************
+ FILE: EvaluateVisitor.cpp
+ 
+ ABSTRACT:
+ Provides implementation of the EvaluateVisitor.
+ 
+ AUTHOR:
+ Nick Durak
+ Barend Ungrodt
+ 
+ CREATION DATE:
+ 11/03/2014
+ 
+ *******************************************************/
 
 #include <iostream>
 #include <stack>
@@ -20,8 +27,15 @@
 
 using namespace std;
 
+/*
+ return the evaluted result
+ */
 bool EvaluateVisitor::getValue()
 {
+    if (m_myStack.size() == 0)
+    {
+        return false;
+    }
     bool result = m_myStack.top();
     m_myStack.pop();
     return result;
