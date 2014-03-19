@@ -10,10 +10,20 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
-/*Negate::Negate(const Negate& other)
+Negate::Negate(const Negate& other)
 {
-    Negate(other.getExpr());
-}*/
+    m_exprPtr = other.m_exprPtr;
+}
+
+Negate& Negate::operator= (const Negate& other)
+{
+    if (this == &other)
+    {
+        return *this;
+    }
+    *m_exprPtr = *other.m_exprPtr;
+    return *this;
+}
 
 LogicExpr* Negate::getExpr() const
 {

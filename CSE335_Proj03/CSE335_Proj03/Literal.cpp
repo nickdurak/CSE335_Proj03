@@ -10,10 +10,10 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
-/*Literal::Literal(const Literal& other)
+Literal::Literal(const Literal& other)
 {
     Literal(other.getValue());
-}*/
+}
 
 bool Literal::getValue() const
 {

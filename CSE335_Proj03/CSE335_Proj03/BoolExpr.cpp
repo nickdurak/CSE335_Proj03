@@ -10,6 +10,23 @@
 #include "LogicExpr.h"
 #include "LogicExprVisitor.h"
 
+BoolExpr::BoolExpr(const BoolExpr& other)
+{
+    m_leftPtr = other.m_leftPtr;
+    m_rightPtr = other.m_rightPtr;
+}
+
+BoolExpr& BoolExpr::operator= (const BoolExpr& other)
+{
+    if (this == &other)
+    {
+        return *this;
+    }
+    *m_rightPtr = *other.m_rightPtr;
+    *m_leftPtr = *other.m_leftPtr;
+    return *this;
+}
+
 LogicExpr* BoolExpr::getLeftExpr() const
 {
     return m_leftPtr;

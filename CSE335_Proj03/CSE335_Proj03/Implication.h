@@ -12,13 +12,14 @@
 #include <iostream>
 #include "BoolExpr.h"
 
-class LogicExprVisitor;
+class LogicExprVisitImplication;
 
 class Implication: public BoolExpr
 {
 public:
     Implication(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};
-    
+    Implication(const Implication& other);
+    Implication& operator= (const Implication& other);
     virtual void accept(LogicExprVisitor* v);
 };
 

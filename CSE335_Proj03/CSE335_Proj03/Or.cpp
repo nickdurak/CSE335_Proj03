@@ -9,10 +9,12 @@
 #include "Or.h"
 #include "LogicExprVisitor.h"
 
-/*Or::Or(Or& other)
+Or::Or(const Or& other): BoolExpr(other) {}
+
+Or & Or::operator= (const Or& other)
 {
-    Or(other.getLeftExpr(), other.getRightExpr());
-}*/
+    return *this;
+}
 
 void Or::accept(LogicExprVisitor *v)
 {

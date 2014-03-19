@@ -9,10 +9,13 @@
 #include "And.h"
 #include "LogicExprVisitor.h"
 
-/*And::And(const And& other)
+And::And(const And& other): BoolExpr(other) {}
+
+And & And::operator= (const And& other)
 {
-    And(other.getLeftExpr(), other.getRightExpr());
-}*/
+    return *this;
+}
+
 
 void And::accept(LogicExprVisitor *v)
 {

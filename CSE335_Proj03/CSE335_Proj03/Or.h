@@ -18,7 +18,8 @@ class Or: public BoolExpr
 {
 public:
     Or(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};
-    //Or(Or& other);
+    Or(const Or& other);
+    Or& operator= (const Or& other);
     virtual void accept(LogicExprVisitor* v);
 };
 

@@ -21,7 +21,8 @@ private:
     
 public:
     Negate(LogicExpr* expr): m_exprPtr(expr) {};
-    //Negate(const Negate& other);
+    Negate(const Negate& other);
+    Negate& operator= (const Negate& other);
     virtual ~Negate() {delete m_exprPtr;};
     LogicExpr* getExpr() const;
     

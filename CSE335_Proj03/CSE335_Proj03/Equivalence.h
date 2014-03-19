@@ -18,7 +18,8 @@ class Equivalence: public BoolExpr
 {
 public:
     Equivalence(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};
-    
+    Equivalence(const Equivalence& other);
+    Equivalence& operator= (const Equivalence& other);
     virtual void accept(LogicExprVisitor* v);
 };
 

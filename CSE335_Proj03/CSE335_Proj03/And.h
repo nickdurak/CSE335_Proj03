@@ -18,7 +18,8 @@ class And: public BoolExpr
 {
 public:
     And(LogicExpr* left, LogicExpr* right): BoolExpr(left, right) {};
-    //And(const And& other);
+    And(const And& other);
+    And& operator= (const And& other);
     virtual void accept(LogicExprVisitor* v);
 };
 

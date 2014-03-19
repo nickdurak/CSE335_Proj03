@@ -22,6 +22,8 @@ private:
     
 public:
     BoolExpr(LogicExpr* left, LogicExpr* right): m_leftPtr(left), m_rightPtr(right) {};
+    BoolExpr(const BoolExpr& other);
+    BoolExpr& operator= (const BoolExpr& other);
     virtual ~BoolExpr();
     
     LogicExpr* getLeftExpr() const;

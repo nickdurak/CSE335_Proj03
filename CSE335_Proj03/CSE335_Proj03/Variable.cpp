@@ -13,11 +13,6 @@
 
 using namespace std;
 
-/*Variable::Variable(const Variable& other)
-{
-    Variable(other.getName());
-}*/
-
 bool Variable::getValue() const
 {
     return m_value;
