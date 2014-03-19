@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7EAABAD2-0278-4BD4-A04E-CE3BEDCC32BB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CSE335_Proj03</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D867C8E6-BE63-4B55-AF70-4D977CF7FE6F</key>
+		<string>https://github.com/njd911/CSE335_Proj03.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CSE335_Proj03/CSE335_Proj03.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D867C8E6-BE63-4B55-AF70-4D977CF7FE6F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/njd911/CSE335_Proj03.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D867C8E6-BE63-4B55-AF70-4D977CF7FE6F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D867C8E6-BE63-4B55-AF70-4D977CF7FE6F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CSE335_Proj03</string>
+		</dict>
+	</array>
+</dict>
+</plist>
